@@ -55,3 +55,6 @@ inputs/*
 domain_output_78764011a945d86377bb16dc0965d1358bf993549228a8a71bf06b174402e32f.yaml
 .env.sh
 src/adhoc/.~lock.*
+
+output/*
+!output/.gitkeep
