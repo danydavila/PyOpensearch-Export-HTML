@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - DEV=true
+    container_name: python_app
+    restart: unless-stopped
+    volumes:
+      - ./src:/home/site/wwwroot/src
+      - ./src/static:/home/site/wwwroot/src/static
+      - ./src/media:/home/site/wwwroot/src/media
+      - ./scripts/container-entrypoint.sh:/usr/bin/container-entrypoint
+    env_file:
+      - .env
+    ports:
+      - "127.0.0.1:8000:8000"
+    command: run-dev-server-collectstatic-migrate
+    # command: >
+    #   sh -c "python manage.py runserver 0.0.0.0:8000"
+    # command: >
+    #   sh -c "python manage.py wait_for_db &&
+    #          python manage.py migrate &&
+    #          python manage.py runserver 0.0.0.0:8000"

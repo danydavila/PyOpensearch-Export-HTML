@@ -1,0 +1,39 @@
+# Git
+.git
+.gitignore
+README.md
+
+# cache
+src/.cache
+
+### Python ###
+__pycache__
+*.pyc
+*.pyo
+*.log
+*.sql
+db.sqlite3
+
+### Python env ###
+.env
+.venv
+venv
+.env.sample
+
+### Intellij ###
+.idea
+src/.idea
+
+### macOS ###
+.DS_Store
+src/.DS_Store
+
+### Linux ###
+*~
+.Trash-*
+src/*~
+src/.Trash-*
+
+### Extra ###
+docs
+archive
